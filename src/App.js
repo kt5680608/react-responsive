@@ -8,9 +8,9 @@ function App() {
     return isDesktop ? children : null
   }
 
-  const Laptop = ({ children }) => {
-    const isLaptop = useMediaQuery({ minWidth: 768, maxWidth: 991 })
-    return isLaptop ? children : null
+  const Tablet = ({ children }) => {
+    const isTablet = useMediaQuery({ minWidth: 768, maxWidth: 991 })
+    return isTablet ? children : null
   }
 
   const Mobile = ({ children }) => {
@@ -25,9 +25,21 @@ function App() {
 
   const Example = () => (
     <div>
-      <Desktop>Desktop</Desktop>
-      <Laptop>Laptop</Laptop>
-      <Mobile>Mobile</Mobile>
+      <Desktop>
+        <div className = "Desktop__container">
+          <h1 className = "Desktop__h1">Desktop</h1>
+        </div>
+      </Desktop>
+      <Tablet>
+      <div className = "Tablet__container">
+          <h1 className = "Tablet__h1">Tablet</h1>
+        </div>
+      </Tablet>
+      <Mobile>
+      <div className = "Mobile__container">
+          <h1 className = "Mobile__h1">Mobile</h1>
+        </div>
+      </Mobile>
       <Default> ( It's Not Mobile ) </Default>
     </div>
   )
